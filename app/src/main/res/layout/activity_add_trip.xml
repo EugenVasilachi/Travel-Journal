@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:paddingTop="48dp"
-    tools:context="View.AddTripActivity">
+    tools:context="com.example.traveljournal.View.AddTripActivity">
 
     <EditText
         android:id="@+id/tripName"

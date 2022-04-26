@@ -1,4 +1,4 @@
-package View;
+package com.example.traveljournal.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 

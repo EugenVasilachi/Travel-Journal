@@ -1,6 +1,4 @@
-package Model;
-
-import java.util.List;
+package com.example.traveljournal.Model;
 
 public class Trip {
     // to be continued

@@ -1,4 +1,4 @@
-package View;
+package com.example.traveljournal.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.widget.EditText;
 
 import com.example.traveljournal.R;
 
-import Controller.Controller;
+import com.example.traveljournal.Controller.Controller;
 
 public class AddTripActivity extends AppCompatActivity {
     private EditText editTextName, editTextDestination, editTextPrice;

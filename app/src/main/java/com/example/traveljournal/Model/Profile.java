@@ -1,4 +1,4 @@
-package Model;
+package com.example.traveljournal.Model;
 
 import java.util.List;
 

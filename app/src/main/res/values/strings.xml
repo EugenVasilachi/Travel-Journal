@@ -15,4 +15,10 @@
     <string name="enter_the_price_of_the_trip">Enter the price of the trip</string>
     <string name="enter_the_destination_of_the_trip">Enter the destination of the trip</string>
     <string name="enter_the_name_of_the_trip">Enter the name of the trip</string>
+    <string name="sign_in">Sign in</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="login">LOGIN</string>
+    <string name="forgot_password2">Forgot password?</string>
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account? Sign Up!</string>
 </resources>

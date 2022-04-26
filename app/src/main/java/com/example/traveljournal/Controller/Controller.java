@@ -1,7 +1,7 @@
-package Controller;
+package com.example.traveljournal.Controller;
 
-import Model.Profile;
-import Model.Trip;
+import com.example.traveljournal.Model.Profile;
+import com.example.traveljournal.Model.Trip;
 
 public class Controller {
 

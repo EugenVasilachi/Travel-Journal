@@ -1,10 +1,9 @@
-package View;
+package com.example.traveljournal.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
@@ -20,8 +19,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        editTextEmail = findViewById(R.id.editTextEmail);
-        editTextPassword = findViewById(R.id.editTextPassword);
+        //editTextEmail = findViewById(R.id.editTextEmail);
+        //editTextPassword = findViewById(R.id.editTextPassword);
+        editTextEmail = findViewById(R.id.username);
+        editTextPassword = findViewById(R.id.password);
+
+        getSupportActionBar().hide();
     }
 
     public void loginOnClick(View view) {
@@ -40,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
             editTextEmail.setError("Please add an email address");
 
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches())
-            editTextEmail.setError("Wrong format of email adress");
+            editTextEmail.setError("Wrong format of email address");
     }
 
     public void createAnAccount(View view) {
