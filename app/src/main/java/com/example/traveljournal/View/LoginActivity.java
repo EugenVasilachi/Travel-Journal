@@ -19,9 +19,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //editTextEmail = findViewById(R.id.editTextEmail);
-        //editTextPassword = findViewById(R.id.editTextPassword);
-        editTextEmail = findViewById(R.id.username);
+        editTextEmail = findViewById(R.id.email);
         editTextPassword = findViewById(R.id.password);
 
         getSupportActionBar().hide();
@@ -37,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
             editTextPassword.setError("Please add a password");
         }
     }
+
 
     public static void checkEmail(String email, EditText editTextEmail) {
         if (email.isEmpty()) {
@@ -55,4 +54,5 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
         startActivity(intent);
     }
+
 }

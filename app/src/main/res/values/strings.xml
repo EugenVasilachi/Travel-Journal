@@ -8,7 +8,6 @@
     <string name="forgot_password">FORGOT PASSWORD</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="send">SEND</string>
     <string name="search">SEARCH</string>
     <string name="verify">VERIFY</string>
     <string name="enter_your_code_to_verify">Enter your code to verify</string>
@@ -19,6 +18,12 @@
     <string name="password">Password</string>
     <string name="username">Username</string>
     <string name="login">LOGIN</string>
-    <string name="forgot_password2">Forgot password?</string>
+    <string name="forgot_password2">Forgot password</string>
     <string name="don_t_have_an_account_sign_up">Don\'t have an account? Sign Up!</string>
+    <string name="email">Email</string>
+    <string name="send">SEND</string>
+    <string name="register">Register</string>
+    <string name="name">Name</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="create_account">CREATE ACCOUNT</string>
 </resources>
