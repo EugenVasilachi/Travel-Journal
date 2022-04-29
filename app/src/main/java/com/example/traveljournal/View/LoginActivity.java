@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.traveljournal.R;
+import com.example.traveljournal.View.UiValidator;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText editTextEmail, editTextPassword;
@@ -28,21 +29,23 @@ public class LoginActivity extends AppCompatActivity {
     public void loginOnClick(View view) {
         String email = editTextEmail.getText().toString();
         String password = editTextPassword.getText().toString();
+        boolean verify = true;
+        if(!UiValidator.validateEmailInput(email, editTextEmail))
+            verify = false;
 
-        checkEmail(email, editTextEmail);
+        if(!UiValidator.validateInputPassword(password, editTextPassword))
+            verify = false;
 
-        if(password.isEmpty()){
-            editTextPassword.setError("Please add a password");
+        if (verify)
+        {
+            // cautam profilul in baza de date dupa email
+            // daca il gasim, verificam parola introdusa (corespunzatoare unicului email)
+            // daca parola este corecta, trecem la urmatoarea activitate (cu datele contului respectiv)
+
+            // mai jos presupun ca totul a fost bine
+            Intent intent = new Intent(LoginActivity.this, DrawerActivity.class);
+            startActivity(intent);
         }
-    }
-
-
-    public static void checkEmail(String email, EditText editTextEmail) {
-        if (email.isEmpty()) {
-            editTextEmail.setError("Please add an email address");
-
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches())
-            editTextEmail.setError("Wrong format of email address");
     }
 
     public void createAnAccount(View view) {
@@ -54,5 +57,6 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
         startActivity(intent);
     }
+
 
 }

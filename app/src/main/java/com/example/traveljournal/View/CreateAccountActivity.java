@@ -9,7 +9,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.traveljournal.Model.Profile;
 import com.example.traveljournal.R;
+
+import java.util.Objects;
 
 public class CreateAccountActivity extends AppCompatActivity {
     EditText password, passwordConfirm, email, name;
@@ -24,7 +27,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         email = findViewById(R.id.emailRegister);
         name = findViewById(R.id.nameRegister);
 
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
     }
 
@@ -35,18 +38,34 @@ public class CreateAccountActivity extends AppCompatActivity {
         String emailString = email.getText().toString();
         String nameString = name.getText().toString();
 
-        if(nameString.isEmpty()) {
-            name.setError("Please add a name");
-        } else if (emailString.isEmpty()) {
-            email.setError("Please add an email address");
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(emailString).matches()) {
-            email.setError("Wrong format of email address");
-        } else if(!passwordString.equals(passwordConfirmString) || passwordString.isEmpty()) {
-            passwordConfirm.setError("Passwords do not match. Try again.");
-        } else {
-            Toast.makeText(this,"Hello from Create an Account Activity!",Toast.LENGTH_SHORT).show();
+        boolean verify = true;
+
+        if (!UiValidator.validateNameInput(nameString, name))
+            verify = false;
+        if (!UiValidator.validateEmailInput(emailString, email))
+            verify = false;
+
+        if (!UiValidator.validateInputPassword(passwordString, password))
+            verify = false;
+
+        if (!UiValidator.validateInputPasswordConfirm(passwordConfirmString, passwordConfirm))
+            verify = false;
+
+        if (!UiValidator.validatePasswordsEquals(passwordString, passwordConfirmString, passwordConfirm))
+            verify = false;
+        if(verify)
+        {
+            // validam unicitatea contului
+            // salvam contul in baza de date
+            // daca este unic, trecem la urmatoare activitate (cu datele contului respectiv)
+            Toast.makeText(this, "Your account has been successfully created!", Toast.LENGTH_SHORT).show();
+
+            // mai jos presupun ca totul a fost bine
+            Intent intent = new Intent(CreateAccountActivity.this, DrawerActivity.class);
+            startActivity(intent);
         }
     }
+
 
     public void alreadyHaveAnAccount(View view) {
         Intent intent = new Intent(CreateAccountActivity.this, LoginActivity.class);
