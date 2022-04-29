@@ -10,19 +10,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelJournal">
         <activity
-            android:name="com.example.traveljournal.View.AddTripActivity"
+            android:name=".View.DrawerActivity"
+            android:exported="false"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/Theme.TravelJournal.NoActionBar" />
+        <activity
+            android:name=".View.ResetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.traveljournal.View.HomeActivity"
+            android:name=".View.drawer.DrawerActivity"
+            android:exported="false"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/Theme.TravelJournal.NoActionBar" />
+        <activity
+            android:name=".View.AddTripActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.traveljournal.View.ForgotPasswordActivity"
+            android:name=".View.HomeActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.traveljournal.View.CreateAccountActivity"
+            android:name=".View.ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.traveljournal.View.LoginActivity"
+            android:name=".View.CreateAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".View.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
