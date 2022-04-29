@@ -36,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         if(!UiValidator.validateInputPassword(password, editTextPassword))
             verify = false;
 
+        verify = true;
         if (verify)
         {
             // cautam profilul in baza de date dupa email
