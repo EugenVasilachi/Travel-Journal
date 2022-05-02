@@ -8,7 +8,10 @@ import android.view.Menu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.traveljournal.Model.Trip;
 import com.example.traveljournal.R;
+import com.example.traveljournal.View.recicler_view.TripAdapter;
+import com.example.traveljournal.View.recicler_view.TripListActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
@@ -19,6 +22,11 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class DrawerActivity extends AppCompatActivity {
@@ -26,11 +34,13 @@ public class DrawerActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private TextView number;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
         handleNavigationDrawer();
+
 
     }
 
@@ -61,7 +71,6 @@ public class DrawerActivity extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
             }
         });
     }
@@ -98,4 +107,5 @@ public class DrawerActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
 }

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelJournal">
         <activity
+            android:name=".View.recicler_view.TripListActivity"
+            android:exported="false" />
+        <activity
             android:name=".Controller.CallNumber"
             android:exported="false" />
         <activity

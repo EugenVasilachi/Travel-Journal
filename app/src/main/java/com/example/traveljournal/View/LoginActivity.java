@@ -10,6 +10,7 @@ import android.widget.EditText;
 
 import com.example.traveljournal.R;
 import com.example.traveljournal.View.UiValidator;
+import com.example.traveljournal.View.recicler_view.TripListActivity;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText editTextEmail, editTextPassword;
@@ -60,4 +61,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+    public void testCardView(View view) {
+        Intent intent = new Intent(LoginActivity.this, TripListActivity.class);
+        startActivity(intent);
+    }
 }
