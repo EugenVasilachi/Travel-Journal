@@ -33,25 +33,28 @@
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/drawable/ic_menu_camera.xml" value="0.1505" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.1505" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/drawable/side_nav_bar.xml" value="0.1505" />
-        <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/activity_add_trip.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/activity_add_trip.xml" value="0.2" />
+        <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/activity_alerts.xml" value="0.15625" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/activity_call_number.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/activity_create_account.xml" value="0.25407608695652173" />
-        <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/activity_drawer.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/activity_drawer.xml" value="0.1" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/activity_dynamic_fragment.xml" value="0.19166666666666668" />
-        <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/activity_forgot_password.xml" value="0.25407608695652173" />
+        <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/activity_forgot_password.xml" value="0.16" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/activity_home.xml" value="0.25407608695652173" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/activity_login.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/activity_main.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/activity_reset_password.xml" value="0.25407608695652173" />
+        <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/activity_trip_list.xml" value="0.2015625" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/app_bar_drawer.xml" value="0.25407608695652173" />
-        <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/content_drawer.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/content_drawer.xml" value="0.176" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/fragment_about_us.xml" value="0.182518115942029" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/fragment_blank.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/fragment_contact.xml" value="0.21302083333333333" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/fragment_gallery.xml" value="0.25407608695652173" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/fragment_home.xml" value="0.25407608695652173" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/fragment_slideshow.xml" value="0.1421875" />
-        <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/nav_header_drawer.xml" value="0.20885416666666667" />
+        <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/item_trip.xml" value="0.264" />
+        <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/layout/nav_header_drawer.xml" value="0.1" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/menu/activity_main_drawer.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/robi_/Desktop/Tot/Android/Travel Journal/Travel-Journal/app/src/main/res/menu/drawer.xml" value="0.16458333333333333" />
       </map>

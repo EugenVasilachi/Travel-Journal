@@ -1,16 +1,16 @@
-package com.example.traveljournal.View.ui.gallery;
+package com.example.traveljournal.View.ui.contact;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class AboutUsViewModel extends ViewModel {
+public class ContactViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public AboutUsViewModel() {
+    public ContactViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is aboutUs fragment");
+        mText.setValue("This is contact fragment");
     }
 
     public LiveData<String> getText() {

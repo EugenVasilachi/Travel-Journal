@@ -10,7 +10,7 @@
     tools:context="com.example.traveljournal.View.LoginActivity">
 
     <TextView
-        android:id="@+id/signin"
+        android:id="@+id/addtrip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/nametrip"
         android:inputType="textEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,11 +47,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signin"
+        app:layout_constraintTop_toBottomOf="@+id/addtrip"
         app:layout_constraintVertical_bias="0.111" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/destination"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -71,20 +71,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/nametrip"
         app:layout_constraintVertical_bias="0.106"
         tools:ignore="TextFields" />
 
-    <Button
+    <TextView
         android:id="@+id/button"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
         android:onClick="loginOnClick"
         android:text="@string/login"
         android:textSize="20sp"
@@ -92,7 +92,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/destination"
         app:layout_constraintVertical_bias="0.243" />
 
     <TextView

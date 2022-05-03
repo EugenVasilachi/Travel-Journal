@@ -17,7 +17,7 @@
     <string name="sign_in">Sign in</string>
     <string name="password">Password</string>
     <string name="username">Username</string>
-    <string name="login">LOGIN</string>
+    <string name="login">Login</string>
     <string name="forgot_password2">Forgot password</string>
     <string name="don_t_have_an_account_sign_up">Don\'t have an account? Sign Up!</string>
     <string name="email">Email</string>
@@ -40,4 +40,15 @@
     <string name="about_us">About us</string>
     <string name="share">Share</string>
     <string name="contact">Contact</string>
+    <string name="the_name_of_the_trip">The name of the trip</string>
+    <string name="destination_name">Destination name</string>
+    <string name="trip_type">Trip Type</string>
+    <string name="city_break">City break</string>
+    <string name="sea_side">Sea Side</string>
+    <string name="mountains">Mountains</string>
+    <string name="start_date">Start Date</string>
+    <string name="start_time">Start Time</string>
+    <string name="end_date">End Date</string>
+    <string name="end_time">End Time</string>
+    <string name="select">Select</string>
 </resources>

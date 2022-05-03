@@ -8,8 +8,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.traveljournal.Model.Profile;
 import com.example.traveljournal.R;
+
+import java.util.Objects;
 
 public class ResetPasswordActivity extends AppCompatActivity {
     private EditText editPassword, editPasswordConfirm;
@@ -21,7 +22,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
         editPassword = findViewById(R.id.newpassword);
         editPasswordConfirm = findViewById(R.id.newpasswordconfirm);
         Toast.makeText(this, "Email verified!", Toast.LENGTH_SHORT).show();
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
     }
 
     public void resetOnClick(View view) {

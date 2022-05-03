@@ -12,12 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelJournal">
         <activity
-            android:name=".View.recicler_view.TripListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Controller.CallNumber"
-            android:exported="false" />
-        <activity
             android:name=".View.DrawerActivity"
             android:exported="false"
             android:label="@string/title_activity_drawer"
@@ -27,9 +21,6 @@
             android:exported="false" />
         <activity
             android:name=".View.AddTripActivity"
-            android:exported="false" />
-        <activity
-            android:name=".View.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".View.ForgotPasswordActivity"
@@ -46,18 +37,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
 
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
-        </activity>
     </application>
 
 </manifest>

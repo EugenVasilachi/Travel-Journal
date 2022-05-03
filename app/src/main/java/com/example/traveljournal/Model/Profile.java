@@ -1,8 +1,11 @@
 package com.example.traveljournal.Model;
 
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class Profile {
+public class Profile implements Serializable {
     private String name;
     private String email;
     private String password;

@@ -1,4 +1,4 @@
-package com.example.traveljournal.View.ui.gallery;
+package com.example.traveljournal.View.ui.aboutus;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

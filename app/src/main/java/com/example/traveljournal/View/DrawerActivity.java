@@ -5,13 +5,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.traveljournal.Model.Trip;
+import com.example.traveljournal.Model.Profile;
 import com.example.traveljournal.R;
-import com.example.traveljournal.View.recicler_view.TripAdapter;
-import com.example.traveljournal.View.recicler_view.TripListActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
@@ -22,26 +20,35 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import java.sql.SQLOutput;
 
 public class DrawerActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    private TextView number;
+    private TextView number, username, email;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
+        Bundle extras = getIntent().getExtras();
+        Profile profile = (Profile) extras.getSerializable("profil");
+
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        username = (TextView) headerView.findViewById(R.id.username);
+        username.setText(profile.getName());
+
+        email = (TextView) headerView.findViewById(R.id.email_nav);
+        email.setText(profile.getEmail());
+
+
+
         handleNavigationDrawer();
-
-
+        handleFabButton();
     }
 
     private void handleNavigationDrawer() {
@@ -71,6 +78,8 @@ public class DrawerActivity extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(DrawerActivity.this, AddTripActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -81,11 +90,8 @@ public class DrawerActivity extends AppCompatActivity {
         // intent implicit to open the dial app with the defined phone number
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:"+ EugenNumber));
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        } else {
-            Toast.makeText(DrawerActivity.this, "Please use a device with a SIM card", Toast.LENGTH_LONG).show();
-        }
+        startActivity(intent);
+
     }
 
     public void callRobert(View view) {
@@ -94,11 +100,8 @@ public class DrawerActivity extends AppCompatActivity {
         // intent implicit to open the dial app with the defined phone number
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:"+ RobertNumber));
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        } else {
-            Toast.makeText(DrawerActivity.this, "Please use a device with a SIM card", Toast.LENGTH_LONG).show();
-        }
+        startActivity(intent);
+
     }
 
     @Override
