@@ -1,11 +1,11 @@
 package com.example.traveljournal.View;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.traveljournal.Model.Profile;
@@ -14,14 +14,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.sql.SQLOutput;
 
 public class DrawerActivity extends AppCompatActivity {
 
@@ -44,8 +43,7 @@ public class DrawerActivity extends AppCompatActivity {
 
         email = (TextView) headerView.findViewById(R.id.email_nav);
         email.setText(profile.getEmail());
-
-
+        setAnimation1();
 
         handleNavigationDrawer();
         handleFabButton();
@@ -111,4 +109,11 @@ public class DrawerActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
+    private void setAnimation1() {
+        ConstraintLayout ConstraintLayout = findViewById(R.id.fragment_home_id);
+        AnimationDrawable animationDrawable = (AnimationDrawable) ConstraintLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2500);
+        animationDrawable.setExitFadeDuration(5000);
+        animationDrawable.start();
+    }
 }

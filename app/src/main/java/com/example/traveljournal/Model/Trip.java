@@ -1,12 +1,9 @@
 package com.example.traveljournal.Model;
 
-import android.media.Image;
-import android.widget.ImageView;
+import android.graphics.drawable.Drawable;
+
 
 public class Trip {
-    // to be continued
-    // picture
-    // rating
     private String name;
     private String destination;
     private String type;
@@ -14,7 +11,7 @@ public class Trip {
     private String startDate;
     private String endDate;
     private float rate;
-    private ImageView image;
+    private Drawable image;
 
     public void setName(String name) {
         this.name = name;
@@ -72,15 +69,15 @@ public class Trip {
         return rate;
     }
 
-    public ImageView getImage() {
+    public Drawable getImage() {
         return image;
     }
 
-    public void setImage(ImageView image) {
+    public void setImage(Drawable image) {
         this.image = image;
     }
 
-    public Trip(String name, String destination, String type, int price, String startDate, String endDate, float rate, ImageView image) {
+    public Trip(String name, String destination, String type, int price, String startDate, String endDate, float rate, Drawable image) {
         this.name = name;
         this.destination = destination;
         this.type = type;

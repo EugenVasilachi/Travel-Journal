@@ -32,6 +32,9 @@ public class TripAdapter extends RecyclerView.Adapter<TripViewHolder>{
         Trip currentTrip = trips.get(position);
         holder.getTextViewName().setText(currentTrip.getName());
         holder.getTextViewDestination().setText(currentTrip.getDestination());
+        String s=Float. toString(currentTrip.getPrice());
+        holder.getTextViewPrice().setText(s);
+        holder.getImageView().setImageDrawable(currentTrip.getImage());
     }
 
     @Override
