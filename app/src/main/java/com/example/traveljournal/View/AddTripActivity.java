@@ -25,7 +25,7 @@ import java.util.Objects;
 
 public class AddTripActivity extends AppCompatActivity {
     private EditText editTextName, editTextDestination, editTextPrice;
-    private TextView textViewDate, textViewTime, textViewDate2, textViewTime2;
+    private TextView textViewDate, textViewDate2;
     int year, month, day, hour, minute;
     RangeSlider rangeSlider;
     @Override
@@ -34,9 +34,7 @@ public class AddTripActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_trip);
         Objects.requireNonNull(getSupportActionBar()).hide();
         textViewDate = findViewById(R.id.textviewDate);
-        textViewTime = findViewById(R.id.textviewTime);
         textViewDate2 = findViewById(R.id.textviewEndDate);
-        textViewTime2 = findViewById(R.id.textviewEndTime);
 
         rangeSlider = findViewById(R.id.slider);
 
@@ -77,16 +75,6 @@ public class AddTripActivity extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-    public void openTimePickerOnClick(View view) {
-        TimePickerDialog timePickerDialog = new TimePickerDialog(AddTripActivity.this, new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                textViewTime.setText(String.format("%d:%d", selectedHour, selectedMinute));
-            }
-        }, hour, minute, true);
-        timePickerDialog.show();
-    }
-
     public void openEndDatePickerOnClick(View view) {
         DatePickerDialog datePickerDialog = new DatePickerDialog(AddTripActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -97,13 +85,9 @@ public class AddTripActivity extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-    public void openEndTimePickerOnClick(View view) {
-        TimePickerDialog timePickerDialog = new TimePickerDialog(AddTripActivity.this, new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                textViewTime2.setText(String.format("%d:%d", selectedHour, selectedMinute));
-            }
-        }, hour, minute, true);
-        timePickerDialog.show();
+    public void addTrip()
+    {
+
     }
+
 }
