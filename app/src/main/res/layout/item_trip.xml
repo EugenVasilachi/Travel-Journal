@@ -18,7 +18,7 @@
             android:id="@+id/cardid"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/gradient_3">
+            android:background="@drawable/gradient_1">
 
             <ImageView
                 android:id="@+id/imageViewCard"

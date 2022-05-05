@@ -12,34 +12,31 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.traveljournal.Model.Trip;
 import com.example.traveljournal.R;
-import com.example.traveljournal.View.recicler_view.TripAdapter;
+import com.example.traveljournal.Controller.recicler_view.TripAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
 
     private RecyclerView recyclerViewTrips;
-    private List<Trip> trips;
+    private List<Trip> trips = new ArrayList<>();
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerViewTrips = view.findViewById(R.id.recyclerViewTrips);
         setupRecyclerViewTrips();
-
         return view;
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private void getTrips() {
-        trips = new ArrayList<>();
         Drawable image = getResources().getDrawable(R.drawable.newyork2);
         Drawable image2 = getResources().getDrawable(R.drawable.egipt);
         Drawable image3 = getResources().getDrawable(R.drawable.hunedoara);
         Drawable image4 = getResources().getDrawable(R.drawable.japonia);
-
-
-
 
         Trip trip1 = new Trip("Calatorie 1", "New York", "City Break", 200, "05/05/2022", "10/05/2022", 5.0F, image);
         Trip trip2 = new Trip("Calatorie 2", "Egipt", "City Break", 600, "15/07/2022", "20/07/2022", 5.0F, image2);
@@ -50,8 +47,6 @@ public class HomeFragment extends Fragment {
         trips.add(trip2);
         trips.add(trip3);
         trips.add(trip4);
-       // trips.add(trip4);
-
     }
 
     private TripAdapter getTripsAdapter() {
@@ -67,5 +62,8 @@ public class HomeFragment extends Fragment {
         getTrips();
         setupLayoutManager();
         recyclerViewTrips.setAdapter(getTripsAdapter());
+    }
+    public void update(Trip trip){
+        trips.add(trip);
     }
 }

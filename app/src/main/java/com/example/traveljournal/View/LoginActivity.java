@@ -1,15 +1,11 @@
 package com.example.traveljournal.View;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-
 import com.example.traveljournal.Model.Profile;
 import com.example.traveljournal.R;
-
 import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
@@ -42,9 +38,9 @@ public class LoginActivity extends AppCompatActivity {
             // cautam profilul in baza de date dupa email
             // daca il gasim, verificam parola introdusa (corespunzatoare unicului email)
             // daca parola este corecta, trecem la urmatoarea activitate (cu datele contului respectiv)
-
             // mai jos presupun ca totul a fost bine
-            Profile profile = new Profile("Robert", email, password, null);
+
+            Profile profile = new Profile("User", email, password);
             Intent intent = new Intent(LoginActivity.this, DrawerActivity.class);
             intent.putExtra("profil", profile);
             startActivity(intent);

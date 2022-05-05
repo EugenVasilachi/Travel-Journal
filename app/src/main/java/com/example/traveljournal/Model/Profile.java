@@ -2,18 +2,15 @@ package com.example.traveljournal.Model;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Profile implements Serializable {
     private String name;
     private String email;
     private String password;
-    private List<Trip> trips;
-    private List<Trip> favouriteTrips;
-
-    public Profile(String name, String email, String password, List<Trip> trips) {
-        this(name, email, password, trips, null);
-    }
+    private ArrayList<Trip> trips = new ArrayList<>();
+    private ArrayList<Trip> favouriteTrips = new ArrayList<>();
 
     public void setName(String name) {
         this.name = name;
@@ -27,20 +24,20 @@ public class Profile implements Serializable {
         this.password = password;
     }
 
-    public Profile(String name, String email, String password, List<Trip> trips, List<Trip> favouriteTrips) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.trips = trips;
-        this.favouriteTrips = favouriteTrips;
-    }
-
     public String getName() {
         return name;
     }
 
     public String getEmail() {
         return email;
+    }
+
+    public Profile(String name, String email, String password) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.trips = new ArrayList<>();
+        this.favouriteTrips = new ArrayList<>();
     }
 
     public String getPassword() {
