@@ -9,8 +9,8 @@ public class Profile implements Serializable {
     private String name;
     private String email;
     private String password;
-    private ArrayList<Trip> trips = new ArrayList<>();
-    private ArrayList<Trip> favouriteTrips = new ArrayList<>();
+    private ArrayList<Trip> trips;
+    private ArrayList<Trip> favouriteTrips;
 
     public void setName(String name) {
         this.name = name;

@@ -15,13 +15,11 @@ import com.example.traveljournal.R;
 import com.example.traveljournal.Controller.recicler_view.TripAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class HomeFragment extends Fragment {
 
     private RecyclerView recyclerViewTrips;
-    private List<Trip> trips = new ArrayList<>();
-
+    public static ArrayList<Trip> trips = new ArrayList<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -33,6 +31,17 @@ public class HomeFragment extends Fragment {
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private void getTrips() {
+        trips = new ArrayList<>();
+
+        // trips = paramListOfTrips --> private/public static void getTrips(paramListOfTrips)
+        // aceasta metoda va fi apelata de 2 ori :
+        // o data in onCreate drawer acitivty
+        // si "a 2 a" oara pentru fiecare adaugare
+        // pentru adaugari real time trebuie sa facem ca ecranul add activity sa faca parte din nav
+        // astfel scapam de problema cu ui threadul(nu va fi nevoie sa revenim la alt ecran, folosim navul)
+        // nu va fi nevoie sa retrimitem controllerul
+        // dupa fiecare adaugare/modificare vom modifica baza de date
+
         Drawable image = getResources().getDrawable(R.drawable.newyork2);
         Drawable image2 = getResources().getDrawable(R.drawable.egipt);
         Drawable image3 = getResources().getDrawable(R.drawable.hunedoara);
@@ -59,11 +68,9 @@ public class HomeFragment extends Fragment {
     }
 
     private void setupRecyclerViewTrips() {
+        // getTrips nu se va mai apela aici
         getTrips();
         setupLayoutManager();
         recyclerViewTrips.setAdapter(getTripsAdapter());
-    }
-    public void update(Trip trip){
-        trips.add(trip);
     }
 }

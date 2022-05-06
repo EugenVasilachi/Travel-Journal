@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    tools:context=".View.DrawerActivity"
     android:padding="@dimen/small_space">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="148dp"
-        android:layout_margin="16dp"
+        android:layout_height="165dp"
+        android:layout_margin="8dp"
         android:elevation="8dp"
         app:cardCornerRadius="8dp">
 
@@ -18,17 +19,31 @@
             android:id="@+id/cardid"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/gradient_1">
+            android:background="@color/white">
 
             <ImageView
                 android:id="@+id/imageViewCard"
-                android:layout_width="0dp"
-                android:layout_height="96dp"
+                android:layout_width="382dp"
+                android:layout_height="111dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="4dp"
+                android:background="@drawable/newyork2"
                 android:scaleType="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/bookmark"
+                android:layout_width="25dp"
+                android:layout_height="21dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:onClick="addFavouriteTrip"
+                android:button="@drawable/ic_baseline_favorite_border_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.976"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,6 +52,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
+                android:text="first text"
+                style="@style/TextAppearance.AppCompat.Body2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.048"
@@ -49,6 +66,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
+                android:text="second text"
+                style="@style/TextAppearance.AppCompat.Body2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.51"
@@ -61,6 +80,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
+                android:text="third text"
+                style="@style/TextAppearance.AppCompat.Body2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.975"

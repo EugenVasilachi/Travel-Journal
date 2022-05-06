@@ -9,17 +9,13 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import com.example.traveljournal.Model.Profile;
 import com.example.traveljournal.Model.Trip;
 import com.example.traveljournal.R;
 import com.example.traveljournal.Controller.Controller;
-import com.example.traveljournal.View.ui.home.HomeFragment;
 import com.google.android.material.slider.RangeSlider;
 import java.text.NumberFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Currency;
-import java.util.List;
 import java.util.Objects;
 
 public class AddTripActivity extends AppCompatActivity {
@@ -29,7 +25,9 @@ public class AddTripActivity extends AppCompatActivity {
     private RatingBar ratingBar;
     int year, month, day, hour, minute;
     RangeSlider rangeSlider;
-    Profile profile;
+    Controller controller;
+
+    public static Trip trip;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +44,7 @@ public class AddTripActivity extends AppCompatActivity {
         ratingBar = findViewById(R.id.ratingBar);
 
         Bundle extras = getIntent().getExtras();
-        profile = (Profile) extras.getSerializable("profil");
+        controller = (Controller) extras.getSerializable("controller");
 
         rangeSlider.setLabelFormatter(value -> {
             NumberFormat format = NumberFormat.getCurrencyInstance();
@@ -63,9 +61,7 @@ public class AddTripActivity extends AppCompatActivity {
     }
 
     public void addTrip(View view) {
-        Controller controller = new Controller(profile);
         String name = editTextName.getText().toString();
-
         String destination = editTextDestination.getText().toString();
 
         String tripType = "";
@@ -80,9 +76,9 @@ public class AddTripActivity extends AppCompatActivity {
         String endDate = textViewDate2.getText().toString();
         int price = 200; // trebuie sa o luam din activity_add_trip.xml
         float rate = ratingBar.getRating();
-        @SuppressLint("UseCompatLoadingForDrawables") Drawable image = getResources().getDrawable(R.drawable.newyork2); // trebuie sa  o luam din activity_add_trip.xml
+        @SuppressLint("UseCompatLoadingForDrawables")
+        Drawable image = getResources().getDrawable(R.drawable.newyork2); // trebuie sa  o luam din activity_add_trip.xml
         controller.addTrip(name, destination, tripType, price, startDate, endDate, rate, image);
-        //Trip trip = new Trip(name, destination, tripType, price, startDate, endDate, rate, image);
     }
 
     public void openDatePickerOnClick(View view) {
