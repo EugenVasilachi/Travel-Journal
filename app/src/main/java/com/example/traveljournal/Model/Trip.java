@@ -11,6 +11,7 @@ public class Trip{
     private String startDate;
     private String endDate;
     private float rate;
+    // lala
     private Drawable image;
 
     public void setName(String name) {
