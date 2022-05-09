@@ -3,7 +3,7 @@ package com.example.traveljournal.Model;
 import android.graphics.drawable.Drawable;
 
 
-public class Trip {
+public class Trip{
     private String name;
     private String destination;
     private String type;

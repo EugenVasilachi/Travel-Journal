@@ -22,6 +22,13 @@
         android:name="com.example.traveljournal.View.ui.contact.ContactFragment"
         android:label="Contact"
         tools:layout="@layout/fragment_contact" />
+
+    <fragment
+        android:id="@+id/fab"
+        android:name="com.example.traveljournal.View.ui.addTrip.AddTripFragment"
+        label="Add a trip"
+        tools:layout="@layout/activity_add_trip"/>
+
     <!--<fragment
         android:id="@+id/nav_share"
         android:name=""

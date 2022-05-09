@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.ui.contact.ContactFragment"
-    android:background="@drawable/sea_waves">
+    android:background="@drawable/gradient_4">
 
     <TextView
         android:id="@+id/textView3"
@@ -17,15 +17,15 @@
         android:layout_marginBottom="8dp"
         android:text="QUICK ASSISTS"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="35sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/text_contact"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.327" />
+        app:layout_constraintVertical_bias="0.121" />
 
     <TextView
         android:id="@+id/textView5"
@@ -35,8 +35,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Robert"
-        android:textColor="@color/white"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/text_contact2"
@@ -44,7 +44,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985" />
+        app:layout_constraintVertical_bias="0.932" />
 
     <TextView
         android:layout_width="match_parent"
@@ -53,8 +53,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Eugen"
-        android:textColor="@color/white"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/text_contact"
@@ -62,7 +62,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.98" />
+        app:layout_constraintVertical_bias="0.867" />
 
     <TextView
         android:id="@+id/textView4"
@@ -71,17 +71,17 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:textColor="@color/white"
         android:layout_marginBottom="8dp"
         android:text="For any further questions don't hesitate to contact us."
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/text_contact"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.604" />
+        app:layout_constraintVertical_bias="0.392" />
 
     <TextView
         android:id="@+id/text_contact_email"
@@ -91,14 +91,14 @@
         android:layout_marginEnd="8dp"
         android:text="vasilachi38@yahoo.com"
         android:textAlignment="center"
-        android:textSize="20sp"
         android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.768" />
+        app:layout_constraintVertical_bias="0.443" />
 
     <TextView
         android:id="@+id/text_contact"
@@ -108,14 +108,14 @@
         android:onClick="callEugen"
         android:text="0744896889"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/blue_light"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.707" />
+        app:layout_constraintVertical_bias="0.382" />
 
     <TextView
         android:id="@+id/text_contact_email2"
@@ -125,14 +125,14 @@
         android:layout_marginEnd="8dp"
         android:text="robi_man41@yahoo.com"
         android:textAlignment="center"
-        android:textSize="20sp"
         android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977" />
+        app:layout_constraintVertical_bias="0.767" />
 
     <TextView
         android:id="@+id/text_contact2"
@@ -143,12 +143,12 @@
         android:onClick="callRobert"
         android:text="0753751632"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/blue_light"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926" />
+        app:layout_constraintVertical_bias="0.707" />
 </androidx.constraintlayout.widget.ConstraintLayout>

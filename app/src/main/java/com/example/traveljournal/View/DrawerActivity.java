@@ -1,20 +1,16 @@
 package com.example.traveljournal.View;
-
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.CheckBox;
 import android.widget.TextView;
-
-import com.example.traveljournal.Model.Profile;
+import com.example.traveljournal.Controller.Controller;
 import com.example.traveljournal.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-
 import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -26,27 +22,24 @@ public class DrawerActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private TextView number, username, email;
-
+    private CheckBox bookmark;
+    private Controller controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
         Bundle extras = getIntent().getExtras();
-        Profile profile = (Profile) extras.getSerializable("profil");
-
-
+        controller = (Controller) extras.getSerializable("controller");
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         View headerView = navigationView.getHeaderView(0);
         username = (TextView) headerView.findViewById(R.id.username);
-        username.setText(profile.getName());
-
+        username.setText(controller.getProfile().getName());
         email = (TextView) headerView.findViewById(R.id.email_nav);
-        email.setText(profile.getEmail());
-        setAnimation1();
-
+        email.setText(controller.getProfile().getEmail());
         handleNavigationDrawer();
         handleFabButton();
+        bookmark = findViewById(R.id.bookmark);
     }
 
     private void handleNavigationDrawer() {
@@ -64,7 +57,6 @@ public class DrawerActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.drawer, menu);
@@ -73,33 +65,28 @@ public class DrawerActivity extends AppCompatActivity {
 
     private void handleFabButton() {
         FloatingActionButton floatingActionButton = findViewById(R.id.fab);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DrawerActivity.this, AddTripActivity.class);
-                startActivity(intent);
-            }
+        floatingActionButton.setOnClickListener(view -> {
+            Intent intent = new Intent(DrawerActivity.this, AddTripActivity.class);
+            System.out.println(controller.getProfile().getTrips().size());
+            intent.putExtra("controller", controller);
+            startActivity(intent);
         });
     }
 
     public void callEugen(View view) {
         number = findViewById(R.id.text_contact);
         String EugenNumber = number.getText().toString();
-        // intent implicit to open the dial app with the defined phone number
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:"+ EugenNumber));
         startActivity(intent);
-
     }
 
     public void callRobert(View view) {
         number = findViewById(R.id.text_contact2);
         String RobertNumber = number.getText().toString();
-        // intent implicit to open the dial app with the defined phone number
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:"+ RobertNumber));
         startActivity(intent);
-
     }
 
     @Override
@@ -109,11 +96,22 @@ public class DrawerActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    private void setAnimation1() {
-        ConstraintLayout ConstraintLayout = findViewById(R.id.fragment_home_id);
-        AnimationDrawable animationDrawable = (AnimationDrawable) ConstraintLayout.getBackground();
-        animationDrawable.setEnterFadeDuration(2500);
-        animationDrawable.setExitFadeDuration(5000);
-        animationDrawable.start();
+    public void addFavouriteTrip(View view) {
+        boolean checked = ((CheckBox) view).isChecked();
+        if(checked)
+        {
+            System.out.println(view.getId());
+            System.out.println("ok");
+            // add trip to favourite list
+            ((CheckBox) view).setButtonDrawable(R.drawable.ic_baseline_favorite_24);
+        }
+        else
+        {
+            // delete trip from favourite list
+            ((CheckBox) view).setButtonDrawable(R.drawable.ic_baseline_favorite_border_24);
+
+        }
+
+
     }
 }

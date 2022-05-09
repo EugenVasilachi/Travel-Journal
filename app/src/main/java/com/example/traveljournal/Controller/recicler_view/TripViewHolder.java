@@ -1,4 +1,4 @@
-package com.example.traveljournal.View.recicler_view;
+package com.example.traveljournal.Controller.recicler_view;
 
 import android.view.View;
 import android.widget.ImageView;
