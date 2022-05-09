@@ -26,8 +26,8 @@
     <fragment
         android:id="@+id/fab"
         android:name="com.example.traveljournal.View.ui.addTrip.AddTripFragment"
-        label="Add a trip"
-        tools:layout="@layout/activity_add_trip"/>
+        android:label="Add a trip"
+        tools:layout="@layout/fragment_add_trip"/>
 
     <!--<fragment
         android:id="@+id/nav_share"

@@ -2,16 +2,31 @@ package com.example.traveljournal.Model;
 
 import android.graphics.drawable.Drawable;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+import org.jetbrains.annotations.NotNull;
+
+@Entity(tableName = "trip_table")
 public class Trip{
+    @PrimaryKey(autoGenerate = true)
+    @NotNull
+    private int id;
+    @NotNull
     private String name;
+    @NotNull
     private String destination;
+    @NotNull
     private String type;
+    @NotNull
     private int price;
+    @NotNull
     private String startDate;
+    @NotNull
     private String endDate;
+    @NotNull
     private float rate;
-    // lala
+    @NotNull
     private Drawable image;
 
     public void setName(String name) {

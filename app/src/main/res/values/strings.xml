@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Travel Journal</string>
-    <string name="welcome_to_your_travel_journal">Welcome to your travel journal</string>
     <string name="please_enter_your_email">Please enter your email</string>
     <string name="please_enter_your_password">Please enter your password</string>
     <string name="log_in">LOG IN</string>
@@ -51,4 +50,9 @@
     <string name="end_date">End Date</string>
     <string name="end_time">End Time</string>
     <string name="select">Select</string>
+    <string name="welcome_to_your_travel_journal">Welcome to your travel journal</string>
+    <string name="popescu_mihai">Popescu Mihai</string>
+    <string name="popescu_mihai25_gmail_com">popescu_mihai25@gmail.com</string>
+    <string name="save">Save</string>
+    <string name="approximate_price">Approximate price:</string>
 </resources>

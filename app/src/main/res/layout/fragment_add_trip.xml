@@ -6,9 +6,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/travel_background5"
     android:orientation="vertical"
-    android:padding="@dimen/small_space"
-    tools:context="com.example.traveljournal.View.AddTripActivity">
-
+    tools:context=".View.DrawerActivity"
+    android:padding="@dimen/small_space">
     <EditText
         android:id="@+id/nametrip"
         android:layout_width="match_parent"
@@ -118,7 +117,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Approximate price:"
+        android:text="@string/approximate_price"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/slider"
         app:layout_constraintEnd_toEndOf="parent"
@@ -143,7 +142,8 @@
         app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintVertical_bias="0.189"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textviewDate"
@@ -184,6 +184,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         android:onClick="openDatePickerOnClick"
         android:text="@string/select"
         android:textColor="@color/blue_light"
@@ -200,6 +202,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         android:onClick="openEndDatePickerOnClick"
         android:text="@string/select"
         android:textColor="@color/blue_light"
@@ -242,7 +246,8 @@
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.914" />
+        app:layout_constraintVertical_bias="0.914"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -250,8 +255,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Save"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         android:onClick="addTrip"
+        android:text="@string/save"
         android:textAlignment="center"
         android:textColor="@color/blue_light"
         app:layout_constraintBottom_toBottomOf="parent"
