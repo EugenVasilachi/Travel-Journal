@@ -1,17 +1,12 @@
 package com.example.traveljournal.Controller.recicler_view;
-
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.traveljournal.Model.Trip;
 import com.example.traveljournal.R;
-import com.example.traveljournal.View.ui.home.HomeFragment;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -36,13 +31,13 @@ public class TripAdapter extends RecyclerView.Adapter<TripViewHolder>{
         Trip currentTrip = trips.get(position);
         holder.getTextViewName().setText(currentTrip.getName());
         holder.getTextViewDestination().setText(currentTrip.getDestination());
-        String s=Float. toString(currentTrip.getPrice());
+        String s=Float. toString(currentTrip.getPrice()) + "€";
         holder.getTextViewPrice().setText(s);
-        // holder.getImageView().setImageDrawable(currentTrip.getImage());
-        // Picasso.get().load(currentTrip.getImage()).into();
-        // holder.getImageView().setImageDrawable(currentTrip.getImageView());
-        // holder.getImageView().setImageDrawable();
-        // holder.setImageView(currentTrip.getImageView());
+        ImageView imageView = holder.getImageView().findViewById(R.id.imageViewCard);
+        Picasso.get().load(currentTrip.getImage()).into(imageView);
+        Picasso.get().load(currentTrip.getImage()).error(R.drawable.default_img1).into(imageView);
+
+        holder.setImageView(imageView);
     }
 
     @Override

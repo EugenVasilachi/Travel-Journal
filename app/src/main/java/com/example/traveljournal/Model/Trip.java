@@ -29,6 +29,16 @@ public class Trip{
     private float rate;
     @NotNull
     private String image;
+    @NotNull
+    private boolean favourite;
+
+    public boolean isFavourite() {
+        return favourite;
+    }
+
+    public void setFavourite(boolean favourite) {
+        this.favourite = favourite;
+    }
 
     public Trip(@NotNull String name, @NotNull String destination, @NotNull String type, int price, @NotNull String startDate, @NotNull String endDate, float rate, @NotNull String image) {
         this.name = name;
@@ -39,6 +49,7 @@ public class Trip{
         this.endDate = endDate;
         this.rate = rate;
         this.image = image;
+        this.favourite = false;
     }
 
     public int getId() {

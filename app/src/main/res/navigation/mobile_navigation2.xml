@@ -29,6 +29,12 @@
         android:label="Add a trip"
         tools:layout="@layout/fragment_add_trip"/>
 
+    <fragment
+        android:id="@+id/fav_trips"
+        android:name="com.example.traveljournal.View.ui.favTrips.favTrips"
+        android:label="Fav Trips"
+        tools:layout="@layout/fragment_fav_trips" />
+
     <!--<fragment
         android:id="@+id/nav_share"
         android:name=""

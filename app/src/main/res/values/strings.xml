@@ -1,30 +1,13 @@
 <resources>
     <string name="app_name">Travel Journal</string>
-    <string name="please_enter_your_email">Please enter your email</string>
-    <string name="please_enter_your_password">Please enter your password</string>
-    <string name="log_in">LOG IN</string>
-    <string name="create_an_account">CREATE AN ACCOUNT</string>
-    <string name="forgot_password">FORGOT PASSWORD</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="search">SEARCH</string>
     <string name="verify">VERIFY</string>
-    <string name="enter_your_code_to_verify">Enter your code to verify</string>
     <string name="enter_the_price_of_the_trip">Enter the price of the trip</string>
     <string name="enter_the_destination_of_the_trip">Enter the destination of the trip</string>
     <string name="enter_the_name_of_the_trip">Enter the name of the trip</string>
-    <string name="sign_in">Sign in</string>
-    <string name="password">Password</string>
-    <string name="username">Username</string>
-    <string name="login">Login</string>
-    <string name="forgot_password2">Forgot password</string>
-    <string name="don_t_have_an_account_sign_up">Don\'t have an account? Sign Up!</string>
-    <string name="email">Email</string>
-    <string name="send">SEND</string>
-    <string name="register">Register</string>
     <string name="name">Name</string>
-    <string name="confirm_password">Confirm password</string>
-    <string name="create_account">CREATE ACCOUNT</string>
     <string name="title_activity_drawer">DrawerActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -32,10 +15,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <string name="about_us">About us</string>
     <string name="share">Share</string>
     <string name="contact">Contact</string>
@@ -50,9 +30,10 @@
     <string name="end_date">End Date</string>
     <string name="end_time">End Time</string>
     <string name="select">Select</string>
-    <string name="welcome_to_your_travel_journal">Welcome to your travel journal</string>
     <string name="popescu_mihai">Popescu Mihai</string>
     <string name="popescu_mihai25_gmail_com">popescu_mihai25@gmail.com</string>
     <string name="save">Save</string>
-    <string name="approximate_price">Approximate price:</string>
+    <string name="approximate_price">Price approx:</string>
+    <string name="rate_this_trip">Rate this trip:</string>
+    <string name="add_a_url_to_set_an_image">ADD A URL TO SET AN IMAGE</string>
 </resources>

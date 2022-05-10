@@ -6,16 +6,19 @@
     android:layout_height="match_parent"
     android:background="@drawable/travel_background5"
     android:orientation="vertical"
-    tools:context=".View.ui.addTrip.AddTripFragment"
-    android:padding="@dimen/small_space">
+    android:padding="@dimen/small_space"
+    tools:context=".View.ui.addTrip.AddTripFragment">
+
     <EditText
         android:id="@+id/nametrip"
+        style="@style/TextAppearance.AppCompat.Body2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:autofillHints=""
         android:background="#30ffffff"
         android:drawablePadding="10dp"
         android:hint="@string/the_name_of_the_trip"
@@ -25,14 +28,14 @@
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.034"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.012" />
 
     <EditText
         android:id="@+id/destination"
+        style="@style/TextAppearance.AppCompat.Body2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -40,6 +43,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:autofillHints=""
         android:background="#30ffffff"
         android:drawablePadding="10dp"
         android:hint="@string/destination_name"
@@ -49,14 +53,14 @@
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nametrip"
-        app:layout_constraintVertical_bias="0.051"
-        tools:ignore="TextFields"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.007"
+        tools:ignore="TextFields" />
 
     <TextView
+        style="@style/TextAppearance.AppCompat.Body2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -67,10 +71,10 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/destination"
-        app:layout_constraintVertical_bias="0.541" />
+        app:layout_constraintVertical_bias="0.615" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -80,23 +84,26 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.026"
+        app:layout_constraintHorizontal_bias="0.037"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/destination"
-        app:layout_constraintVertical_bias="0.163">
+        app:layout_constraintVertical_bias="0.057">
 
         <RadioButton
             android:id="@+id/buton1"
-            android:checked="true"
+            style="@style/TextAppearance.AppCompat.Widget.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="@string/city_break"
             android:textColor="@color/white" />
 
         <RadioButton
             android:id="@+id/buton2"
+            style="@style/TextAppearance.AppCompat.Widget.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sea_side"
@@ -104,6 +111,7 @@
 
         <RadioButton
             android:id="@+id/button3"
+            style="@style/TextAppearance.AppCompat.Widget.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/mountains"
@@ -111,6 +119,7 @@
     </RadioGroup>
 
     <TextView
+        style="@style/TextAppearance.AppCompat.Body2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -126,17 +135,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <com.google.android.material.slider.RangeSlider
+    <com.google.android.material.slider.Slider
         android:id="@+id/slider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:stepSize="10.0"
-        android:value="20.0"
-        android:valueFrom="0.0"
-        android:valueTo="200.0"
+        android:stepSize="50"
+        android:valueFrom="0"
+        android:valueTo="10000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.437"
@@ -147,6 +155,7 @@
 
     <TextView
         android:id="@+id/textviewDate"
+        style="@style/TextAppearance.AppCompat.Body2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -164,6 +173,7 @@
 
     <TextView
         android:id="@+id/textviewEndDate"
+        style="@style/TextAppearance.AppCompat.Body2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -180,6 +190,7 @@
 
     <TextView
         android:id="@+id/textViewSelect1"
+        style="@style/TextAppearance.AppCompat.Body2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -197,6 +208,7 @@
 
     <TextView
         android:id="@+id/textViewSelect2"
+        style="@style/TextAppearance.AppCompat.Body2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -214,18 +226,37 @@
 
     <TextView
         android:id="@+id/textView6"
+        style="@style/TextAppearance.AppCompat.Body2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Rate this trip:"
+        android:text="@string/rate_this_trip"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/ratingBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/addAnImage"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="222dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_baseline_image_24"
+        android:hint="@string/add_a_url_to_set_an_image"
+        android:textColor="@color/blue_light"
+        android:textColorHint="@color/blue_light"
+        app:layout_constraintBottom_toTopOf="@+id/slider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/destination"
+        app:layout_constraintVertical_bias="0.0"
+        android:autofillHints=""
+        android:inputType="text" />
 
     <RatingBar
         android:id="@+id/ratingBar"
@@ -246,6 +277,8 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
+        android:id="@+id/saveButton"
+        style="@style/TextAppearance.AppCompat.Body2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -253,7 +286,6 @@
         android:layout_marginBottom="8dp"
         android:minWidth="48dp"
         android:minHeight="48dp"
-        android:onClick="addTrip"
         android:text="@string/save"
         android:textAlignment="center"
         android:textColor="@color/blue_light"
@@ -263,6 +295,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.988" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

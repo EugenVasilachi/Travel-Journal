@@ -1,23 +1,14 @@
 package com.example.traveljournal.View;
-import android.annotation.SuppressLint;
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RatingBar;
 import android.widget.TextView;
-
 import com.example.traveljournal.R;
-import com.example.traveljournal.View.ui.addTrip.AddTripFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.slider.RangeSlider;
-
 import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -25,10 +16,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.text.NumberFormat;
-import java.util.Calendar;
-import java.util.Currency;
 
 public class DrawerActivity extends AppCompatActivity {
 
@@ -45,7 +32,6 @@ public class DrawerActivity extends AppCompatActivity {
         handleNavigationDrawer();
         handleFabButton();
         bookmark = findViewById(R.id.bookmark);
-
     }
 
     private void handleNavigationDrawer() {
@@ -56,7 +42,7 @@ public class DrawerActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_about_us, R.id.nav_contact)
+                R.id.nav_home, R.id.nav_about_us, R.id.nav_contact, R.id.fav_trips)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_drawer);
@@ -72,8 +58,6 @@ public class DrawerActivity extends AppCompatActivity {
     private void handleFabButton() {
         FloatingActionButton floatingActionButton = findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(view -> {
-            /*Intent intent = new Intent(DrawerActivity.this, AddTripActivity.class);
-            startActivity(intent);*/
             Navigation.findNavController(this, R.id.nav_host_fragment_content_drawer).navigate(R.id.fab);
         });
     }
