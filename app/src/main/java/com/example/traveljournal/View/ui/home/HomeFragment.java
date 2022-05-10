@@ -1,7 +1,4 @@
 package com.example.traveljournal.View.ui.home;
-
-import android.annotation.SuppressLint;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.traveljournal.Model.Trip;
 import com.example.traveljournal.R;
 import com.example.traveljournal.Controller.recicler_view.TripAdapter;
-import com.squareup.picasso.Picasso;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -26,36 +23,28 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerViewTrips = view.findViewById(R.id.recyclerViewTrips);
-        //setupRecyclerViewTrips();
+        setupRecyclerViewTrips();
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        FloatingActionButton fab = getActivity().findViewById(R.id.fab);
+        fab.setVisibility(View.VISIBLE);
     }
 
     private void getTrips() {
         trips = new ArrayList<>();
+        String urlImage1 = "https://image1496442226666-8d4d0e62e6e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80";
+        String urlImage2 = "https://images.unsplash.com/photo-1574864745093-5566c5be5855?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80";
+        String urlImage3 = "https://images.unsplash.com/photo-1509713086752-a3747b6ee54a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80";
+        String urlImage4 = "https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80";
 
-        // trips = paramListOfTrips --> private/public static void getTrips(paramListOfTrips)
-        // aceasta metoda va fi apelata de 2 ori :
-        // o data in onCreate drawer acitivty
-        // si "a 2 a" oara pentru fiecare adaugare
-        // pentru adaugari real time trebuie sa facem ca ecranul add activity sa faca parte din nav
-        // astfel scapam de problema cu ui threadul(nu va fi nevoie sa revenim la alt ecran, folosim navul)
-        // nu va fi nevoie sa retrimitem controllerul
-        // dupa fiecare adaugare/modificare vom modifica baza de date
-
-        /*Drawable image1 = getResources().getDrawable(R.drawable.newyork2);
-        Drawable image2 = getResources().getDrawable(R.drawable.egipt);
-        Drawable image3 = getResources().getDrawable(R.drawable.hunedoara);
-        Drawable image4 = getResources().getDrawable(R.drawable.japonia);*/
-
-        String urlImage1 = "https://www.istockphoto.com/photo/the-statue-of-liberty-over-the-scene-of-new-york-cityscape-river-side-which-location-gm1167975236-322312116?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fliberty-statue&utm_term=liberty%20statue%3A%3Asearch-explore-top-affiliate-outside-feed-x-v2%3Acontrol";
-        String urlImage2 = "https://www.istockphoto.com/photo/landscape-with-egyptian-pyramids-great-sphinx-and-silhouettes-ancient-symbols-and-gm1320446784-407006230?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fegypt&utm_term=egypt%3A%3Asearch-explore-top-affiliate-outside-feed-x-v2%3Acontrol";
-        String urlImage3 = "https://unsplash.com/photos/JPNhZicZ-VM";
-        String urlImage4 = "https://unsplash.com/photos/9bdt03k4ujw";
-
-        Trip trip1 = new Trip("Calatorie 1", "New York", "City Break", 200, "05/05/2022", "10/05/2022", 5.0F, urlImage1);
-        Trip trip2 = new Trip("Calatorie 2", "Egipt", "City Break", 600, "15/07/2022", "20/07/2022", 5.0F, urlImage2);
-        Trip trip3 = new Trip("Calatorie 3", "Hunedoara", "City Break", 1000, "30/12/2022", "15/01/2023", 5.0F, urlImage3);
-        Trip trip4 = new Trip("Calatorie 4", "Japonia", "City Break", 1000, "30/12/2022", "15/01/2023", 5.0F, urlImage4);
+        Trip trip1 = new Trip("Recomandation", "New York", "City Break", 2000, "05/05/2022", "10/05/2022", 5.0F, urlImage1);
+        Trip trip2 = new Trip("Recomandation", "Egipt", "City Break", 2500, "15/07/2022", "20/07/2022", 5.0F, urlImage2);
+        Trip trip3 = new Trip("Recomandation", "Hunedoara", "City Break", 100, "30/12/2022", "15/01/2023", 5.0F, urlImage3);
+        Trip trip4 = new Trip("Recomandation", "Japonia", "City Break", 3500, "30/12/2022", "15/01/2023", 5.0F, urlImage4);
 
         trips.add(trip1);
         trips.add(trip2);
@@ -73,7 +62,6 @@ public class HomeFragment extends Fragment {
     }
 
     private void setupRecyclerViewTrips() {
-        // getTrips nu se va mai apela aici
         getTrips();
         setupLayoutManager();
         recyclerViewTrips.setAdapter(getTripsAdapter());
