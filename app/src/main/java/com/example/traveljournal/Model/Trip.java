@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey;
 
 import org.jetbrains.annotations.NotNull;
 
-@Entity(tableName = "trip_table")
+@Entity(tableName = "trip_table_test")
 public class Trip{
     @PrimaryKey(autoGenerate = true)
     @NotNull
@@ -30,13 +30,13 @@ public class Trip{
     @NotNull
     private String image;
     @NotNull
-    private boolean favourite;
+    private int favourite;
 
-    public boolean isFavourite() {
+    public int getFavourite() {
         return favourite;
     }
 
-    public void setFavourite(boolean favourite) {
+    public void setFavourite(int favourite) {
         this.favourite = favourite;
     }
 
@@ -49,7 +49,7 @@ public class Trip{
         this.endDate = endDate;
         this.rate = rate;
         this.image = image;
-        this.favourite = false;
+        this.favourite = 0;
     }
 
     public int getId() {

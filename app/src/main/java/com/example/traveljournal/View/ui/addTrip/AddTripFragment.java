@@ -2,6 +2,7 @@ package com.example.traveljournal.View.ui.addTrip;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +14,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.example.traveljournal.Controller.recicler_view.TripAdapter;
 import com.example.traveljournal.Model.Trip;
+import com.example.traveljournal.Model.TripViewModel;
 import com.example.traveljournal.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.slider.Slider;
@@ -22,6 +27,7 @@ import com.google.android.material.slider.Slider;
 import java.text.NumberFormat;
 import java.util.Calendar;
 import java.util.Currency;
+import java.util.List;
 
 public class AddTripFragment extends Fragment {
     private EditText editTextName, editTextDestination;
@@ -32,6 +38,7 @@ public class AddTripFragment extends Fragment {
     private EditText stringImg;
     int year, month, day, hour, minute;
     private Slider slider;
+    private TripViewModel tripViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -63,6 +70,7 @@ public class AddTripFragment extends Fragment {
         save = (TextView) view.findViewById(R.id.saveButton);
         stringImg = view.findViewById(R.id.addAnImage);
 
+        tripViewModel = new ViewModelProvider(this).get(TripViewModel.class);
 
         slider.setLabelFormatter(value -> {
             NumberFormat format = NumberFormat.getCurrencyInstance();
@@ -119,6 +127,11 @@ public class AddTripFragment extends Fragment {
                 // start end trip
                 // mentionam ca daca nu se adauga/ nu se adauga un url corect o imagine default va fi selectata
                 Trip trip = new Trip(name, destination, tripType, price, startDate, endDate, rate, image);
+                tripViewModel.insert(trip);
+                tripViewModel.getTrips().observe(getActivity(), trips -> {
+                    // update the adapter => adapter.setWords(words);
+                    // TripAdapter tripAdapter = new TripAdapter(tripViewModel.getTrips());
+                });
                 Toast.makeText(getContext(), "Trip added!", Toast.LENGTH_SHORT).show();
 
             });

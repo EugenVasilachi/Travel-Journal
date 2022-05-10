@@ -12,6 +12,6 @@ public interface TripDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)  // cand se insereaza acelasi cuvant, il ignora (nu-l mai insereaza)
     void insert(Trip trip);
 
-    @Query("SELECT * FROM trip_table ORDER BY id ASC")
+    @Query("SELECT * FROM trip_table_test ORDER BY id ASC")
     LiveData<List<Trip>> getTrips();
 }

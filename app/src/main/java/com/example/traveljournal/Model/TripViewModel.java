@@ -19,11 +19,11 @@ public class TripViewModel extends AndroidViewModel {
         trips = tripRepository.getWords();
     }
 
-    public LiveData<List<Trip>> getWords() {
+    public LiveData<List<Trip>> getTrips() {
         return trips;
     }
 
-    void insert(Trip trip) {
+    public void insert(Trip trip) {
         tripRepository.insert(trip);
     }
 }

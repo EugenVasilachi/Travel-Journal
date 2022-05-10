@@ -23,8 +23,8 @@ public class favTrips extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
-        recyclerViewTrips = view.findViewById(R.id.recyclerViewTrips);
+        View view = inflater.inflate(R.layout.fragment_fav_trips, container, false);
+        recyclerViewTrips = view.findViewById(R.id.recyclerViewFavTrips);
         setupRecyclerViewTrips();
         return view;
     }
