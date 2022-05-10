@@ -36,7 +36,6 @@ public class TripAdapter extends RecyclerView.Adapter<TripViewHolder>{
         ImageView imageView = holder.getImageView().findViewById(R.id.imageViewCard);
         Picasso.get().load(currentTrip.getImage()).into(imageView);
         Picasso.get().load(currentTrip.getImage()).error(R.drawable.default_img1).into(imageView);
-
         holder.setImageView(imageView);
     }
 

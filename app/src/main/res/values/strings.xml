@@ -35,5 +35,5 @@
     <string name="save">Save</string>
     <string name="approximate_price">Price approx:</string>
     <string name="rate_this_trip">Rate this trip:</string>
-    <string name="add_a_url_to_set_an_image">ADD A URL TO SET AN IMAGE</string>
+    <string name="add_a_url_to_set_an_image">ADD AN URL</string>
 </resources>
