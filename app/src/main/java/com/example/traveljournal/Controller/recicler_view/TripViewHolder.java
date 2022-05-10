@@ -37,4 +37,8 @@ public class TripViewHolder extends RecyclerView.ViewHolder{
     public TextView getTextViewDestination() {
         return textViewDestination;
     }
+
+    public void setImageView(ImageView imageView) {
+        this.imageView = imageView;
+    }
 }

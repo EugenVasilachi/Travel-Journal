@@ -36,14 +36,6 @@ public class DrawerActivity extends AppCompatActivity {
     private TextView number;
     private CheckBox bookmark;
 
-    // elemente din AddTripActivity
-    private EditText editTextName, editTextDestination;
-    private TextView textViewDate, textViewDate2;
-    private RadioButton button1, button2, button3;
-    private RatingBar ratingBar;
-    int year, month, day, hour, minute;
-    private RangeSlider rangeSlider;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,31 +78,6 @@ public class DrawerActivity extends AppCompatActivity {
         });
     }
 
-    public void initialize() {
-        editTextName = findViewById(R.id.nametrip);
-        editTextDestination = findViewById(R.id.destination);
-        textViewDate = findViewById(R.id.textviewDate);
-        textViewDate2 = findViewById(R.id.textviewEndDate);
-        button1 = findViewById(R.id.buton1);
-        button2 = findViewById(R.id.buton2);
-        button3 = findViewById(R.id.button3);
-        rangeSlider = findViewById(R.id.slider);
-        ratingBar = findViewById(R.id.ratingBar);
-
-
-        rangeSlider.setLabelFormatter(value -> {
-            NumberFormat format = NumberFormat.getCurrencyInstance();
-            format.setCurrency(Currency.getInstance("EUR"));
-            return format.format(value);
-        });
-
-        Calendar calendar = Calendar.getInstance();
-        year = calendar.get(Calendar.YEAR);
-        month = calendar.get(Calendar.MONTH);
-        day = calendar.get(Calendar.DAY_OF_MONTH);
-        hour = calendar.get(Calendar.HOUR_OF_DAY);
-        minute = calendar.get(Calendar.MINUTE);
-    }
 
     public void callEugen(View view) {
         number = findViewById(R.id.text_contact);
@@ -135,25 +102,6 @@ public class DrawerActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    public void addTrip(View view) {
-        //initialize();
-
-        String name = editTextName.getText().toString();
-        String destination = editTextDestination.getText().toString();
-
-        String tripType = "";
-        if(button1.isChecked())
-            tripType = button1.getText().toString();
-        if(button2.isChecked())
-            tripType = button2.getText().toString();
-        if(button3.isChecked())
-            tripType = button3.getText().toString();
-
-        String startDate = textViewDate.getText().toString();
-        String endDate = textViewDate2.getText().toString();
-        int price = 200; // trebuie sa o luam din activity_add_trip.xml
-        float rate = ratingBar.getRating();
-    }
 
     public void addFavouriteTrip(View view) {
         boolean checked = ((CheckBox) view).isChecked();
@@ -168,23 +116,5 @@ public class DrawerActivity extends AppCompatActivity {
             ((CheckBox) view).setButtonDrawable(R.drawable.ic_baseline_favorite_border_24);
 
         }
-    }
-    // !!!!
-    public void openDatePickerOnClick(View view) {
-        @SuppressLint("DefaultLocale") DatePickerDialog datePickerDialog =
-                new DatePickerDialog(DrawerActivity.this,
-                        (datePicker, selectedYear, selectedMonth, selectedDay)
-                                -> textViewDate.setText(String.format("%d-%d-%d", selectedDay, selectedMonth + 1,
-                                selectedYear)), year, month, day);
-        datePickerDialog.show();
-    }
-    // !!!!
-    public void openEndDatePickerOnClick(View view) {
-        @SuppressLint("DefaultLocale") DatePickerDialog datePickerDialog =
-                new DatePickerDialog(DrawerActivity.this, (datePicker,
-                                                            selectedYear, selectedMonth, selectedDay)
-                        -> textViewDate2.setText(String.format("%d-%d-%d", selectedDay, selectedMonth + 1,
-                        selectedYear)), year, month, day);
-        datePickerDialog.show();
     }
 }

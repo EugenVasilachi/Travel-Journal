@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.traveljournal.Model.Trip;
 import com.example.traveljournal.R;
 import com.example.traveljournal.Controller.recicler_view.TripAdapter;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -25,11 +26,10 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerViewTrips = view.findViewById(R.id.recyclerViewTrips);
-        setupRecyclerViewTrips();
+        //setupRecyclerViewTrips();
         return view;
     }
 
-    @SuppressLint("UseCompatLoadingForDrawables")
     private void getTrips() {
         trips = new ArrayList<>();
 
@@ -42,15 +42,20 @@ public class HomeFragment extends Fragment {
         // nu va fi nevoie sa retrimitem controllerul
         // dupa fiecare adaugare/modificare vom modifica baza de date
 
-        Drawable image = getResources().getDrawable(R.drawable.newyork2);
+        /*Drawable image1 = getResources().getDrawable(R.drawable.newyork2);
         Drawable image2 = getResources().getDrawable(R.drawable.egipt);
         Drawable image3 = getResources().getDrawable(R.drawable.hunedoara);
-        Drawable image4 = getResources().getDrawable(R.drawable.japonia);
+        Drawable image4 = getResources().getDrawable(R.drawable.japonia);*/
 
-        Trip trip1 = new Trip("Calatorie 1", "New York", "City Break", 200, "05/05/2022", "10/05/2022", 5.0F, image);
-        Trip trip2 = new Trip("Calatorie 2", "Egipt", "City Break", 600, "15/07/2022", "20/07/2022", 5.0F, image2);
-        Trip trip3 = new Trip("Calatorie 3", "Hunedoara", "City Break", 1000, "30/12/2022", "15/01/2023", 5.0F, image3);
-        Trip trip4 = new Trip("Calatorie 4", "Japonia", "City Break", 1000, "30/12/2022", "15/01/2023", 5.0F, image4);
+        String urlImage1 = "https://www.istockphoto.com/photo/the-statue-of-liberty-over-the-scene-of-new-york-cityscape-river-side-which-location-gm1167975236-322312116?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fliberty-statue&utm_term=liberty%20statue%3A%3Asearch-explore-top-affiliate-outside-feed-x-v2%3Acontrol";
+        String urlImage2 = "https://www.istockphoto.com/photo/landscape-with-egyptian-pyramids-great-sphinx-and-silhouettes-ancient-symbols-and-gm1320446784-407006230?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fegypt&utm_term=egypt%3A%3Asearch-explore-top-affiliate-outside-feed-x-v2%3Acontrol";
+        String urlImage3 = "https://unsplash.com/photos/JPNhZicZ-VM";
+        String urlImage4 = "https://unsplash.com/photos/9bdt03k4ujw";
+
+        Trip trip1 = new Trip("Calatorie 1", "New York", "City Break", 200, "05/05/2022", "10/05/2022", 5.0F, urlImage1);
+        Trip trip2 = new Trip("Calatorie 2", "Egipt", "City Break", 600, "15/07/2022", "20/07/2022", 5.0F, urlImage2);
+        Trip trip3 = new Trip("Calatorie 3", "Hunedoara", "City Break", 1000, "30/12/2022", "15/01/2023", 5.0F, urlImage3);
+        Trip trip4 = new Trip("Calatorie 4", "Japonia", "City Break", 1000, "30/12/2022", "15/01/2023", 5.0F, urlImage4);
 
         trips.add(trip1);
         trips.add(trip2);

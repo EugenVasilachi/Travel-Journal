@@ -1,6 +1,7 @@
 package com.example.traveljournal.Model;
 
 import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -27,80 +28,95 @@ public class Trip{
     @NotNull
     private float rate;
     @NotNull
-    private Drawable image;
+    private String image;
 
-    public void setName(String name) {
+    public Trip(@NotNull String name, @NotNull String destination, @NotNull String type, int price, @NotNull String startDate, @NotNull String endDate, float rate, @NotNull String image) {
         this.name = name;
-    }
-
-    public void setDestination(String destination) {
         this.destination = destination;
-    }
-
-    public void setType(String type) {
         this.type = type;
-    }
-
-    public void setPrice(int price) {
         this.price = price;
-    }
-
-    public void setStartDate(String startDate) {
         this.startDate = startDate;
-    }
-
-    public void setEndDate(String endDate) {
         this.endDate = endDate;
-    }
-
-    public void setRate(float rate) {
         this.rate = rate;
+        this.image = image;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @NotNull
     public String getName() {
         return name;
     }
 
+    public void setName(@NotNull String name) {
+        this.name = name;
+    }
+
+    @NotNull
     public String getDestination() {
         return destination;
     }
 
+    public void setDestination(@NotNull String destination) {
+        this.destination = destination;
+    }
+
+    @NotNull
     public String getType() {
         return type;
+    }
+
+    public void setType(@NotNull String type) {
+        this.type = type;
     }
 
     public int getPrice() {
         return price;
     }
 
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    @NotNull
     public String getStartDate() {
         return startDate;
     }
 
+    public void setStartDate(@NotNull String startDate) {
+        this.startDate = startDate;
+    }
+
+    @NotNull
     public String getEndDate() {
         return endDate;
+    }
+
+    public void setEndDate(@NotNull String endDate) {
+        this.endDate = endDate;
     }
 
     public float getRate() {
         return rate;
     }
 
-    public Drawable getImage() {
+    public void setRate(float rate) {
+        this.rate = rate;
+    }
+
+    @NotNull
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Drawable image) {
+    public void setImage(@NotNull String image) {
         this.image = image;
     }
 
-    public Trip(String name, String destination, String type, int price, String startDate, String endDate, float rate, Drawable image) {
-        this.name = name;
-        this.destination = destination;
-        this.type = type;
-        this.price = price;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.rate = rate;
-        this.image = image;
-    }
 }
