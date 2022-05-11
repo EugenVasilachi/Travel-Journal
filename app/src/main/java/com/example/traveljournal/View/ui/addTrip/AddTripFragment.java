@@ -2,7 +2,6 @@ package com.example.traveljournal.View.ui.addTrip;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,23 +10,18 @@ import android.widget.RadioButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-
-import com.example.traveljournal.Controller.recicler_view.TripAdapter;
 import com.example.traveljournal.Model.Trip;
 import com.example.traveljournal.Model.TripViewModel;
 import com.example.traveljournal.R;
+import com.example.traveljournal.View.ui.home.HomeFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.slider.Slider;
-
 import java.text.NumberFormat;
 import java.util.Calendar;
 import java.util.Currency;
-import java.util.List;
 
 public class AddTripFragment extends Fragment {
     private EditText editTextName, editTextDestination;
@@ -51,23 +45,23 @@ public class AddTripFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        FloatingActionButton fab = getActivity().findViewById(R.id.fab);
+        FloatingActionButton fab = requireActivity().findViewById(R.id.fab);
         fab.setVisibility(View.GONE);
     }
 
     public void initialize(View view) {
-        editTextName = (EditText) view.findViewById(R.id.nametrip);
-        editTextDestination = (EditText) view.findViewById(R.id.destination);
-        textViewDate = (TextView) view.findViewById(R.id.textviewDate);
-        textViewDate2 = (TextView) view.findViewById(R.id.textviewEndDate);
-        textViewSelect1 = (TextView) view.findViewById(R.id.textViewSelect1);
-        textViewSelect2 = (TextView) view.findViewById(R.id.textViewSelect2);
-        button1 = (RadioButton) view.findViewById(R.id.buton1);
-        button2 = (RadioButton) view.findViewById(R.id.buton2);
-        button3 = (RadioButton) view.findViewById(R.id.button3);
-        slider = (Slider) view.findViewById(R.id.slider);
-        ratingBar = (RatingBar) view.findViewById(R.id.ratingBar);
-        save = (TextView) view.findViewById(R.id.saveButton);
+        editTextName = view.findViewById(R.id.nametrip);
+        editTextDestination = view.findViewById(R.id.destination);
+        textViewDate = view.findViewById(R.id.textviewDate);
+        textViewDate2 = view.findViewById(R.id.textviewEndDate);
+        textViewSelect1 = view.findViewById(R.id.textViewSelect1);
+        textViewSelect2 = view.findViewById(R.id.textViewSelect2);
+        button1 = view.findViewById(R.id.buton1);
+        button2 = view.findViewById(R.id.buton2);
+        button3 = view.findViewById(R.id.button3);
+        slider = view.findViewById(R.id.slider);
+        ratingBar = view.findViewById(R.id.ratingBar);
+        save = view.findViewById(R.id.saveButton);
         stringImg = view.findViewById(R.id.addAnImage);
 
         tripViewModel = new ViewModelProvider(this).get(TripViewModel.class);
@@ -121,16 +115,15 @@ public class AddTripFragment extends Fragment {
                 int price = (int)slider.getValue();
                 float rate = ratingBar.getRating();
                 image = stringImg.getText().toString();
-                // validari :
-                // numele tripului
-                // locatia
-                // start end trip
-                // mentionam ca daca nu se adauga/ nu se adauga un url corect o imagine default va fi selectata
                 Trip trip = new Trip(name, destination, tripType, price, startDate, endDate, rate, image);
                 tripViewModel.insert(trip);
-                tripViewModel.getTrips().observe(getActivity(), trips -> {
-                    // update the adapter => adapter.setWords(words);
-                    // TripAdapter tripAdapter = new TripAdapter(tripViewModel.getTrips());
+                tripViewModel.getTrips().observe(requireActivity(), trips -> {
+                    /*update the adapter => adapter.setWords(words);
+                    TripAdapter tripAdapter = new TripAdapter(tripViewModel.getTrips());
+                    RecyclerView recyclerView = requireActivity().findViewById(R.id.fragment_home_id);
+                    recyclerView.setAdapter(new TripAdapter(tripViewModel.getTrips().getValue()));*/
+
+                    HomeFragment.setTrips(tripViewModel.getTrips().getValue());
                 });
                 Toast.makeText(getContext(), "Trip added!", Toast.LENGTH_SHORT).show();
 

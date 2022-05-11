@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey;
 
 import org.jetbrains.annotations.NotNull;
 
-@Entity(tableName = "trip_table_test")
+@Entity(tableName = "trip_table_test5")
 public class Trip{
     @PrimaryKey(autoGenerate = true)
     @NotNull

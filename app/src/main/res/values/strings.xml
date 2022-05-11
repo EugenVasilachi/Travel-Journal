@@ -36,4 +36,6 @@
     <string name="approximate_price">Price approx:</string>
     <string name="rate_this_trip">Rate this trip:</string>
     <string name="add_a_url_to_set_an_image">ADD AN URL</string>
+    <string name="tripid">tripId</string>
+    <string name="this_application_is_a_journal_where_you_can_store_all_the_trips_you_have_been_on_or_you_would_like_to_n_n_therefore_you_can_create_your_own_trip_where_you_can_add_its_name_destination_and_price_also_you_can_select_the_period_in_which_you_have_been_gone_or_you_would_like_to_go_and_give_that_journey_a_rating_from_1_star_to_5_for_selecting_an_image_you_would_have_to_copy_an_url_from_the_internet_n_n_you_can_select_which_trips_are_your_favourite_ones_and_saving_them_into_favourite_trips">This application is a journal where you can store all the trips you have been on or you would like to.\n\n Therefore, you can create your own trip where you can add its name, destination, and price. Also, you can select the period in which you have been gone or you would like to go and give that journey a rating from 1 star to 5. For selecting an image, you would have to copy an url from the internet.\n\n You can select which trips are your favourite ones and saving them into Favourite Trips.</string>
 </resources>
