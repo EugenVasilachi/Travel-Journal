@@ -4,19 +4,22 @@ import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TripRepository {
     private TripDao tripDao;
     private LiveData<List<Trip>> trips;
+    private LiveData<List<Trip>> favtrips;
 
     TripRepository(Application application) {
         TripRoomDatabase wordRoomDatabase = TripRoomDatabase.getDatabase(application);
         tripDao = wordRoomDatabase.tripDao();
         trips = tripDao.getTrips();
+        /*favtrips = tripDao.getFavouriteTrips();*/
     }
 
-    public LiveData<List<Trip>> getWords() {
+    public LiveData<List<Trip>> getTrips() {
         return trips;
     }
 
@@ -26,5 +29,8 @@ public class TripRepository {
         TripRoomDatabase.databaseWriteExecutor.execute(() -> {
             tripDao.insert(trip);
         });
+    }
+    public LiveData<List<Trip>> getFavouriteTrips(){
+        return favtrips;
     }
 }

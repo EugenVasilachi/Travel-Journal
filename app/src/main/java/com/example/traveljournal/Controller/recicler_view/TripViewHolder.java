@@ -11,7 +11,7 @@ import com.example.traveljournal.R;
 
 public class TripViewHolder extends RecyclerView.ViewHolder{
 
-    private final TextView textViewName, textViewDestination, textViewPrice;
+    private final TextView textViewName, textViewDestination, textViewPrice, textTripId;
     private ImageView imageView;
 
     public TripViewHolder(@NonNull View itemView) {
@@ -20,6 +20,7 @@ public class TripViewHolder extends RecyclerView.ViewHolder{
         textViewDestination = itemView.findViewById(R.id.textViewDestination);
         textViewPrice = itemView.findViewById(R.id.textViewPRICE);
         imageView = itemView.findViewById(R.id.imageViewCard);
+        textTripId = itemView.findViewById(R.id.tripId);
     }
 
     public TextView getTextViewPrice() {
@@ -32,6 +33,10 @@ public class TripViewHolder extends RecyclerView.ViewHolder{
 
     public TextView getTextViewName() {
         return textViewName;
+    }
+    public TextView getTripId()
+    {
+        return textTripId;
     }
 
     public TextView getTextViewDestination() {

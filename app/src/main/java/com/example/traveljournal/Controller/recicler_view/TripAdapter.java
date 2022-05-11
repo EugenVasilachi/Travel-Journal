@@ -1,4 +1,5 @@
 package com.example.traveljournal.Controller.recicler_view;
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,16 +27,33 @@ public class TripAdapter extends RecyclerView.Adapter<TripViewHolder>{
         return new TripViewHolder(item);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull TripViewHolder holder, int position) {
         Trip currentTrip = trips.get(position);
+
+        String id = Float.toString(currentTrip.getId());
+        holder.getTripId().setText(id);
+
+        if(!currentTrip.getName().isEmpty())
         holder.getTextViewName().setText(currentTrip.getName());
+        else
+            holder.getTextViewName().setText("Trip name");
+
+        if(!currentTrip.getDestination().isEmpty())
         holder.getTextViewDestination().setText(currentTrip.getDestination());
-        String s=Float. toString(currentTrip.getPrice()) + "€";
-        holder.getTextViewPrice().setText(s);
+        else
+            holder.getTextViewDestination().setText("Destination");
+
+        String pret=Float. toString(currentTrip.getPrice()) + "€";
+        holder.getTextViewPrice().setText(pret);
+
         ImageView imageView = holder.getImageView().findViewById(R.id.imageViewCard);
-        Picasso.get().load(currentTrip.getImage()).into(imageView);
-        Picasso.get().load(currentTrip.getImage()).error(R.drawable.default_img1).into(imageView);
+        if(!currentTrip.getImage().isEmpty()) {
+            Picasso.get().load(currentTrip.getImage()).into(imageView);
+            Picasso.get().load(currentTrip.getImage()).error(R.drawable.default_img1).into(imageView);
+        }
+        else imageView.setImageResource(R.drawable.default_img1);
         holder.setImageView(imageView);
     }
 

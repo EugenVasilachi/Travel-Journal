@@ -6,10 +6,13 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import com.example.traveljournal.Model.Trip;
+import com.example.traveljournal.Model.TripViewModel;
 import com.example.traveljournal.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -17,11 +20,15 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DrawerActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private TextView number;
     private CheckBox bookmark;
+    private TripViewModel tripViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +39,7 @@ public class DrawerActivity extends AppCompatActivity {
         handleNavigationDrawer();
         handleFabButton();
         bookmark = findViewById(R.id.bookmark);
+        tripViewModel = new ViewModelProvider(this).get(TripViewModel.class);
     }
 
     private void handleNavigationDrawer() {
@@ -57,9 +65,7 @@ public class DrawerActivity extends AppCompatActivity {
 
     private void handleFabButton() {
         FloatingActionButton floatingActionButton = findViewById(R.id.fab);
-        floatingActionButton.setOnClickListener(view -> {
-            Navigation.findNavController(this, R.id.nav_host_fragment_content_drawer).navigate(R.id.fab);
-        });
+        floatingActionButton.setOnClickListener(view -> Navigation.findNavController(this, R.id.nav_host_fragment_content_drawer).navigate(R.id.fab));
     }
 
 
@@ -100,5 +106,16 @@ public class DrawerActivity extends AppCompatActivity {
             ((CheckBox) view).setButtonDrawable(R.drawable.ic_baseline_favorite_border_24);
 
         }
+    }
+
+    public void showDetails(View view) {
+        TextView idText = view.findViewById(R.id.tripId);
+        float id = Float.parseFloat(idText.getText().toString());
+        int intId = (int)id;
+        tripViewModel.getTrips().observe(DrawerActivity.this, trips -> {
+            List<Trip> calatorii;
+            calatorii = tripViewModel.getTrips().getValue();
+            System.out.println(calatorii.size());
+        });
     }
 }
