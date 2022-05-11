@@ -27,8 +27,11 @@ public class TripViewModel extends AndroidViewModel {
         tripRepository.insert(trip);
     }
 
-    /*public LiveData<List<Trip>> getFavouriteTrips()
-    {
+    public LiveData<List<Trip>> getFavouriteTrips() {
         return favTrips;
-    }*/
+    }
+
+    public void updateFavourite(int id) {
+        tripRepository.updateFavourite(id);
+    }
 }

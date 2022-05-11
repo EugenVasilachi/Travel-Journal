@@ -41,6 +41,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:onClick="addFavouriteTrip"
+                app:buttonTint="#FF0000"
+                android:text=""
                 android:button="@drawable/ic_baseline_favorite_border_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.976"

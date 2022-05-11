@@ -43,9 +43,8 @@ public class HomeFragment extends Fragment {
     }
 
     private void getTrips() {
-        trips = new ArrayList<>();
         tripViewModel.getTrips().observe(requireActivity(), trips -> setTrips(tripViewModel.getTrips().getValue()));
-
+        //tripViewModel.getFavouriteTrips().observe(requireActivity(), trips -> setTrips(tripViewModel.getFavouriteTrips().getValue()));
         /*String urlImage1 = "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80";
         String urlImage2 = "https://images.unsplash.com/photo-1574864745093-5566c5be5855?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80";
         String urlImage3 = "https://images.unsplash.com/photo-1509713086752-a3747b6ee54a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80";
@@ -72,8 +71,8 @@ public class HomeFragment extends Fragment {
     }
 
     private void setupRecyclerViewTrips() {
-        if(0 == trips.size())
-            getTrips();
+
+        getTrips();
         setupLayoutManager();
         recyclerViewTrips.setAdapter(getTripsAdapter());
     }

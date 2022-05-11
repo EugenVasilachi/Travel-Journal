@@ -32,8 +32,16 @@ public class TripAdapter extends RecyclerView.Adapter<TripViewHolder>{
     public void onBindViewHolder(@NonNull TripViewHolder holder, int position) {
         Trip currentTrip = trips.get(position);
 
-        String id = Float.toString(currentTrip.getId());
+        String id = Integer.toString(currentTrip.getId());
         holder.getTripId().setText(id);
+
+        String idBookmark = Integer.toString(currentTrip.getId());
+        holder.getBookmark().setText(idBookmark);
+
+        int favourite = currentTrip.getFavourite();
+        if(favourite == 1) {
+            holder.getBookmark().setButtonDrawable(R.drawable.ic_baseline_favorite_24);
+        }
 
         if(!currentTrip.getName().isEmpty())
         holder.getTextViewName().setText(currentTrip.getName());

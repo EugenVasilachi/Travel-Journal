@@ -1,6 +1,7 @@
 package com.example.traveljournal.Controller.recicler_view;
 
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -9,9 +10,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.traveljournal.R;
 
-public class TripViewHolder extends RecyclerView.ViewHolder{
+public class TripViewHolder extends RecyclerView.ViewHolder {
 
     private final TextView textViewName, textViewDestination, textViewPrice, textTripId;
+    private CheckBox bookmark;
     private ImageView imageView;
 
     public TripViewHolder(@NonNull View itemView) {
@@ -21,6 +23,7 @@ public class TripViewHolder extends RecyclerView.ViewHolder{
         textViewPrice = itemView.findViewById(R.id.textViewPRICE);
         imageView = itemView.findViewById(R.id.imageViewCard);
         textTripId = itemView.findViewById(R.id.tripId);
+        bookmark = itemView.findViewById(R.id.bookmark);
     }
 
     public TextView getTextViewPrice() {
@@ -34,9 +37,12 @@ public class TripViewHolder extends RecyclerView.ViewHolder{
     public TextView getTextViewName() {
         return textViewName;
     }
-    public TextView getTripId()
-    {
+
+    public TextView getTripId() {
         return textTripId;
+    }
+    public CheckBox getBookmark() {
+        return bookmark;
     }
 
     public TextView getTextViewDestination() {

@@ -1,14 +1,11 @@
 package com.example.traveljournal.Model;
 
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
-
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import org.jetbrains.annotations.NotNull;
 
-@Entity(tableName = "trip_table_test5")
+@Entity(tableName = "trip_table_test6")
 public class Trip{
     @PrimaryKey(autoGenerate = true)
     @NotNull
@@ -129,5 +126,7 @@ public class Trip{
     public void setImage(@NotNull String image) {
         this.image = image;
     }
+
+
 
 }

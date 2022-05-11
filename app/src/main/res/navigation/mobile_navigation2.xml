@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/fav_trips"
-        android:name="com.example.traveljournal.View.ui.favTrips.favTrips"
+        android:name="com.example.traveljournal.View.ui.favTrips.FavouriteTripsFragment"
         android:label="Fav Trips"
         tools:layout="@layout/fragment_fav_trips" />
 

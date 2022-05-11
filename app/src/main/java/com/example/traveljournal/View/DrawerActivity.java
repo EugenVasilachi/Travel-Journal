@@ -12,6 +12,7 @@ import com.example.traveljournal.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -20,7 +21,6 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class DrawerActivity extends AppCompatActivity {
@@ -95,13 +95,15 @@ public class DrawerActivity extends AppCompatActivity {
 
     public void addFavouriteTrip(View view) {
         boolean checked = ((CheckBox) view).isChecked();
-        if(checked)
-        {
+        if(checked) {
             // add trip to favourite list
             ((CheckBox) view).setButtonDrawable(R.drawable.ic_baseline_favorite_24);
+            CheckBox idText = view.findViewById(R.id.bookmark);
+            int id = Integer.parseInt(idText.getText().toString());
+            System.out.println(id + " suntem unde trebuie");
+            tripViewModel.updateFavourite(id);
         }
-        else
-        {
+        else {
             // delete trip from favourite list
             ((CheckBox) view).setButtonDrawable(R.drawable.ic_baseline_favorite_border_24);
 
@@ -110,12 +112,11 @@ public class DrawerActivity extends AppCompatActivity {
 
     public void showDetails(View view) {
         TextView idText = view.findViewById(R.id.tripId);
-        float id = Float.parseFloat(idText.getText().toString());
-        int intId = (int)id;
+        int id = Integer.parseInt(idText.getText().toString());
+        System.out.println(id+" aaDaa");
         tripViewModel.getTrips().observe(DrawerActivity.this, trips -> {
             List<Trip> calatorii;
             calatorii = tripViewModel.getTrips().getValue();
-            System.out.println(calatorii.size());
         });
     }
 }
