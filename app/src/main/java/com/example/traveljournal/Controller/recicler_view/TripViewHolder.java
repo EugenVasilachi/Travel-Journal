@@ -41,6 +41,7 @@ public class TripViewHolder extends RecyclerView.ViewHolder {
     public TextView getTripId() {
         return textTripId;
     }
+
     public CheckBox getBookmark() {
         return bookmark;
     }

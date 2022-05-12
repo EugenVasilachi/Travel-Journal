@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".View.DrawerActivity"
-    android:padding="@dimen/small_space">
+    android:padding="@dimen/small_space"
+    tools:context=".View.DrawerActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -19,8 +19,8 @@
             android:id="@+id/cardid"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="showDetails"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:onClick="showDetails">
 
             <ImageView
                 android:id="@+id/imageViewCard"
@@ -36,14 +36,14 @@
 
             <CheckBox
                 android:id="@+id/bookmark"
-                android:layout_width="25dp"
-                android:layout_height="21dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
+                android:button="@drawable/favourite0"
                 android:onClick="addFavouriteTrip"
+                android:textSize="0sp"
                 app:buttonTint="#FF0000"
-                android:text=""
-                android:button="@drawable/ic_baseline_favorite_border_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.976"
                 app:layout_constraintStart_toStartOf="parent"
@@ -51,11 +51,11 @@
 
             <TextView
                 android:id="@+id/textViewName"
+                style="@style/TextAppearance.AppCompat.Body2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:textColor="@color/black"
-                style="@style/TextAppearance.AppCompat.Body2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.048"
@@ -65,11 +65,11 @@
 
             <TextView
                 android:id="@+id/textViewDestination"
+                style="@style/TextAppearance.AppCompat.Body2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:textColor="@color/black"
-                style="@style/TextAppearance.AppCompat.Body2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.51"
@@ -79,11 +79,11 @@
 
             <TextView
                 android:id="@+id/textViewPRICE"
+                style="@style/TextAppearance.AppCompat.Body2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:textColor="@color/black"
-                style="@style/TextAppearance.AppCompat.Body2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.975"
@@ -98,8 +98,8 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:visibility="invisible"
                 android:textAlignment="center"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
