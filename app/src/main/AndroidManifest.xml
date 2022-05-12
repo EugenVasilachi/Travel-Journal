@@ -12,17 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelJournal">
         <activity
-            android:name=".View.DrawerActivity"
-            android:exported="true"
-            android:label="@string/title_activity_drawer"
-            android:theme="@style/Theme.TravelJournal.NoActionBar">
+            android:name=".View.SplashActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".View.DrawerActivity"
+            android:exported="true"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/Theme.TravelJournal.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
