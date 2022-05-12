@@ -19,11 +19,12 @@ public abstract class TripRoomDatabase extends RoomDatabase {
     static final ExecutorService databaseWriteExecutor = Executors.newFixedThreadPool(4);
 
     static TripRoomDatabase getDatabase(final Context context) {
-        if(INSTANCE == null) {
+        if (INSTANCE == null) {
             synchronized (TripRoomDatabase.class) {
-                if(INSTANCE == null) {
+                if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            TripRoomDatabase.class, "trip_database_test6")
+                            // !!!!!!                                               !!!!!!
+                            TripRoomDatabase.class, "trip_database_test6").allowMainThreadQueries()
                             .build();
                 }
             }

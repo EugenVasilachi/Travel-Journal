@@ -18,10 +18,11 @@ public class AboutUsFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_about_us, container, false);
     }
+
     @Override
     public void onResume() {
         super.onResume();
-        FloatingActionButton fab = getActivity().findViewById(R.id.fab);
+        FloatingActionButton fab = requireActivity().findViewById(R.id.fab);
         fab.setVisibility(View.GONE);
     }
 

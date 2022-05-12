@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey;
 import org.jetbrains.annotations.NotNull;
 
 @Entity(tableName = "trip_table_test6")
-public class Trip{
+public class Trip {
     @PrimaryKey(autoGenerate = true)
     @NotNull
     private int id;
@@ -126,7 +126,6 @@ public class Trip{
     public void setImage(@NotNull String image) {
         this.image = image;
     }
-
 
 
 }

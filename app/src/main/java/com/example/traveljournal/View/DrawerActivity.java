@@ -1,18 +1,24 @@
 package com.example.traveljournal.View;
+
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.widget.CheckBox;
 import android.widget.TextView;
+
 import com.example.traveljournal.Model.Trip;
 import com.example.traveljournal.Model.TripViewModel;
 import com.example.traveljournal.R;
+import com.example.traveljournal.View.ui.details.DetailsFragment;
+import com.example.traveljournal.View.ui.details.FragmentHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -20,8 +26,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.List;
 
 public class DrawerActivity extends AppCompatActivity {
 
@@ -57,6 +61,7 @@ public class DrawerActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.drawer, menu);
@@ -73,7 +78,7 @@ public class DrawerActivity extends AppCompatActivity {
         number = findViewById(R.id.text_contact);
         String EugenNumber = number.getText().toString();
         Intent intent = new Intent(Intent.ACTION_DIAL);
-        intent.setData(Uri.parse("tel:"+ EugenNumber));
+        intent.setData(Uri.parse("tel:" + EugenNumber));
         startActivity(intent);
     }
 
@@ -81,7 +86,7 @@ public class DrawerActivity extends AppCompatActivity {
         number = findViewById(R.id.text_contact2);
         String RobertNumber = number.getText().toString();
         Intent intent = new Intent(Intent.ACTION_DIAL);
-        intent.setData(Uri.parse("tel:"+ RobertNumber));
+        intent.setData(Uri.parse("tel:" + RobertNumber));
         startActivity(intent);
     }
 
@@ -93,30 +98,38 @@ public class DrawerActivity extends AppCompatActivity {
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public void addFavouriteTrip(View view) {
         boolean checked = ((CheckBox) view).isChecked();
-        if(checked) {
-            // add trip to favourite list
-            ((CheckBox) view).setButtonDrawable(R.drawable.ic_baseline_favorite_24);
+        if (checked) {
             CheckBox idText = view.findViewById(R.id.bookmark);
             int id = Integer.parseInt(idText.getText().toString());
-            System.out.println(id + " suntem unde trebuie");
-            tripViewModel.updateFavourite(id);
-        }
-        else {
-            // delete trip from favourite list
-            ((CheckBox) view).setButtonDrawable(R.drawable.ic_baseline_favorite_border_24);
-
+            tripViewModel.updateFavourite(id, 1);
+            ((CheckBox) view).setButtonDrawable(R.drawable.favourite1);
+        } else {
+            CheckBox idText = view.findViewById(R.id.bookmark);
+            int id = Integer.parseInt(idText.getText().toString());
+            tripViewModel.updateFavourite(id, 0);
+            ((CheckBox) view).setButtonDrawable(R.drawable.favourite0);
         }
     }
 
     public void showDetails(View view) {
         TextView idText = view.findViewById(R.id.tripId);
         int id = Integer.parseInt(idText.getText().toString());
-        System.out.println(id+" aaDaa");
-        tripViewModel.getTrips().observe(DrawerActivity.this, trips -> {
-            List<Trip> calatorii;
-            calatorii = tripViewModel.getTrips().getValue();
-        });
+        Trip trip = tripViewModel.loadTrip(id);
+        Bundle bundle = new Bundle();
+        bundle.putString("name", trip.getName());
+        bundle.putString("destination", trip.getDestination());
+        bundle.putString("type", trip.getType());
+        bundle.putInt("price", trip.getPrice());
+        bundle.putString("startDate", trip.getStartDate());
+        bundle.putString("endDate", trip.getEndDate());
+        bundle.putFloat("rate", trip.getRate());
+        bundle.putString("image", trip.getImage());
+        DetailsFragment detailsFragment = new DetailsFragment();
+        detailsFragment.setArguments(bundle);
+        Navigation.findNavController(this, R.id.nav_host_fragment_content_drawer).navigate(R.id.details);
+        FragmentHelper.displayFragment(DrawerActivity.this, R.id.nav_host_fragment_content_drawer, detailsFragment);
     }
 }
